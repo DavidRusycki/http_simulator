@@ -61,7 +61,7 @@ let js = (function(){
 
     let montaAccordionServidorDesligado = () => {
         let sContentResponse = ' HTTP/1.1 502 BAD GATEWAY \n date: Sun Mar 20 22:34:32 BRT 2022 \n content-type: text/html; charset=UTF-8 \n transfer-encoding: chunked \n connection: close \n server:  Microsoft-IIS/4.0 \n content-encoding: gzip';
-        let sContentRequest = ' GET index.html HTTP/1.1 \n host: '+ getEnderecoRequisicao() +' \n accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 \n accept_encoding: gzip, deflate, br \n accept_language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3 \n user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Firefox/46.0 ';
+        let sContentRequest = ' Get /index.html HTTP/1.1 \n Accept-Language: us-en \n Accept: /* \n Connection: close \n Host: '+ getEnderecoRequisicao() +' \n ';
 
         let oAccordionRequest = getAccordionRequest(getIndice(), 'green', sContentRequest);
         incrementIndice();
@@ -73,11 +73,11 @@ let js = (function(){
     }
 
     let montaAccordionServidorLigado = () => {
-        let sContentRequest = ' GET index.html HTTP/1.1 \n host: '+ getEnderecoRequisicao() +' \n accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 \n accept_encoding: gzip, deflate, br \n accept_language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3 \n user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Firefox/46.0 ';
+        let sContentRequest = ' Get /index.html HTTP/1.1 \n Accept-Language: us-en \n Accept: /* \n Connection: close \n Host: '+ getEnderecoRequisicao() +' \n ';
         let oAccordionRequest = getAccordionRequest(getIndice(), 'green', sContentRequest);
         incrementIndice();
         
-        let sContentResponse = 'HTTP/1.1 200 OK \n date: Sun Mar 20 22:53:41 BRT 2022 \n content-type: text/html; charset=UTF-8 \n transfer-encoding: chunked \n connection: close \n server:  Microsoft-IIS/4.0 \n content-encoding: gzip';
+        let sContentResponse = ' HTTP/1.1 200 OK  \n Connection: close \n Content-Length: 357 \n Content-Type: text/html \n Server: PT-Server/5.2 \n HTTP DATA.. \n ';
         let oAccordionResponse = getAccordionResponse(getIndice(), 'red', sContentResponse);
 
         let oComunicacao = getDivComunicacao();
@@ -86,7 +86,7 @@ let js = (function(){
     }
 
     let montaAccordionSemConexao = () => {
-        let sContentRequest = ' GET index.html HTTP/1.1 \n host: '+ getEnderecoRequisicao() +' \n accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 \n accept_encoding: gzip, deflate, br \n accept_language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3 \n user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Firefox/46.0 ';
+        let sContentRequest = ' Get /index.html HTTP/1.1 \n Accept-Language: us-en \n Accept: /* \n Connection: close \n Host: '+ getEnderecoRequisicao() +' \n ';
         let oAccordionRequest = getAccordionRequest(getIndice(), 'green', sContentRequest);
         incrementIndice();
         
@@ -100,7 +100,7 @@ let js = (function(){
 
     let montaAccordionFalhaAutenticacao = () => {
 
-        let sContentRequest = ' GET index.html HTTP/1.1 \n host: '+ getEnderecoRequisicao() +' \n accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 \n accept_encoding: gzip, deflate, br \n accept_language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3 \n user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Firefox/46.0 ';
+        let sContentRequest = ' Get /index.html HTTP/1.1 \n Accept-Language: us-en \n Accept: /* \n Connection: close \n Host: '+ getEnderecoRequisicao() +' \n ';
         let oAccordionRequest = getAccordionRequest(getIndice(), 'green', sContentRequest);
         incrementIndice();
         
@@ -121,7 +121,7 @@ let js = (function(){
 
     let montaAccordion404 = () => {
 
-        let sContentRequest = ' GET index.html HTTP/1.1 \n host: '+ getEnderecoRequisicao() +' \n accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 \n accept_encoding: gzip, deflate, br \n accept_language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3 \n user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Firefox/46.0 ';
+        let sContentRequest = ' Get /index.html HTTP/1.1 \n Accept-Language: us-en \n Accept: /* \n Connection: close \n Host: '+ getEnderecoRequisicao() +' \n ';
         let oAccordionRequest = getAccordionRequest(getIndice(), 'green', sContentRequest);
         incrementIndice();
         
